@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM Q&A System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>LLM Question & Answer</h1>
+
+        <form method="POST" class="qa-form">
+            <input type="text" name="question" placeholder="Ask me anything..." required>
+            <button type="submit">Ask AI</button>
+        </form>
+
+        {% if processed_question %}
+        <div class="results">
+            <div class="box processed">
+                <h2>Processed Question:</h2>
+                <p>{{ processed_question }}</p>
+            </div>
+            <div class="box answer">
+                <h2>Answer:</h2>
+                <div class="markdown">{{ answer_html | safe }}</div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

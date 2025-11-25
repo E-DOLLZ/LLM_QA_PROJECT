@@ -1,0 +1,122 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background: #ffffffee; /* semi-transparent white */
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+}
+
+/* Form */
+.qa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.qa-form input {
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.qa-form input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.qa-form button {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.qa-form button:hover {
+    background: #574fd6;
+}
+
+/* Results */
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    max-height: 70vh; /* scroll if content is too tall */
+    overflow-y: auto;
+}
+
+.box h2 {
+    margin-bottom: 10px;
+    color: #6c63ff;
+    font-size: 1.3rem;
+}
+
+.markdown {
+    line-height: 1.6;
+}
+
+.markdown h1, .markdown h2, .markdown h3 {
+    color: #333;
+}
+
+.markdown pre {
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.markdown code {
+    background: #cd8dd3;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+}
