@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from LLM_QA_CLI import preprocess, ask_cohere
-import markdown2  # new
+import markdown2
+import os
 
 app = Flask(__name__)
 
@@ -27,4 +28,8 @@ def index():
     )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Render sets the PORT environment variable for production
+    port = int(os.environ.get("PORT", 5000))
+    # Debug mode is False by default on Render
+    debug = os.environ.get("FLASK_DEBUG", "False") == "True"
+    app.run(host="0.0.0.0", port=port, debug=debug)
